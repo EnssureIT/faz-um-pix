@@ -1,0 +1,26 @@
+{
+  "name": "faz-um-pix",
+  "version": "1.0.0",
+  "description": "Biblioteca em Node.js para geração de transações utilizando o sistema PIX do BACEN",
+  "main": "faz-um-pix.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EnssureIT/faz-um-pix.git"
+  },
+  "keywords": [
+    "PIX",
+    "BACEN",
+    "QRCODE",
+    "PAGAMENTO",
+    "BOLETO"
+  ],
+  "author": "Enssure Softwares",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EnssureIT/faz-um-pix/issues"
+  },
+  "homepage": "https://github.com/EnssureIT/faz-um-pix#readme"
+}

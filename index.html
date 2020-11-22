@@ -112,7 +112,7 @@
                 var estado = document.getElementById("estado").value;
                 var valor = document.getElementById("valor").value;
                 var descricao = document.getElementById("descricao").value;
-                return qrCodePix(chave_pix, nome, estado, valor.replace(",", "."), descricao);
+                return Pix(chave_pix, nome, estado, valor.replace(",", "."), descricao);
             }
 
             function Mudarestado(el) {
