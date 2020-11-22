@@ -9,16 +9,33 @@
 
 Biblioteca em Node.js para gerar transações utilizando o sistema PIX do BACEN.
 
+## Demonstração
+https://enssureit.github.io/faz-um-pix
+
 ## Instalação
 `npm install faz-um-pix --save`
 <br />ou<br />
 `yarn add faz-um-pix`
 
 ## Uso
-```js
+Typescript
+```typescript
 import { Pix } from "faz-um-pix"
 
 const code = Pix("123456789", "SILVA SILVA", "RIO DE JANEIRO", "0.10", "Pedido #123456");
+```
+Vanilla JS
+```js
+var _pix = require('faz-um-pix');
+
+var code = _pix.Pix("123456789", "SILVA SILVA", "RIO DE JANEIRO", "0.10", "Pedido #123456");
+```
+
+Html
+```html
+<script  src="lib/faz-um-pix.js"></script>
+
+var code = Pix("123456789", "SILVA SILVA", "RIO DE JANEIRO", "0.10", "Pedido #123456");
 ```
 
 
