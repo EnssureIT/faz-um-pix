@@ -26,6 +26,11 @@ body {
 
 .rodape {
   float: right;
-  padding-right: 2%;
   font-size: 15px;
+}
+
+.github {
+  float: right;
+  font-size: 15px;
+  filter: invert(100%);
 }
