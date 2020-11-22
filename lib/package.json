@@ -1,6 +1,6 @@
 {
   "name": "faz-um-pix",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Biblioteca em Node.js para gerar transações utilizando o sistema PIX do BACEN",
   "main": "faz-um-pix.js",
   "scripts": {
