@@ -1,96 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <title>Faz um Pix</title>
-</head>
-<body>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12">
-                <div class="title">
-                    <h1 class="logo">Faz um Pix</h1>
-                    <h2>A Forma mais Fácil e Simples de Receber Pagamentos</h2>
-                </div>
-            </div>
-            <div class="col-6">
-                <div class="image">
-                    <img src="https://d9hhrg4mnvzow.cloudfront.net/templates.unbounce.com/horizons/4cace893-horizons-ebookmockup-v2_0ik0ik0dq0ik02f000028.png" alt="Minha Figura">	
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="form">
-                <form>
-                    <div class="form-group">
-                      <label for="chave_pix">Chave Pix</label>
-                      <input type="chave_pix" class="form-control" id="chave_pix" placeholder="fulano@email.com / 000.000.000-00">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="css/style.css" />
+        <script src="lib/faz-um-pix.js"></script>
+        <script src="js/qrious.min.js"></script>
+        <script async src="https://static.addtoany.com/menu/page.js"></script>
+        <title>Faz um Pix</title>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="title">
+                        <h1 class="logo">Faz um Pix</h1>
+                        <h2>A Forma mais Fácil e Simples de Receber Pagamentos</h2>
                     </div>
-                    <div class="form-group">
-                        <label for="nome">Nome Completo</label>
-                        <input type="nome" class="form-control" id="nome" placeholder="Fulano da Silva Silva">
-                      </div>
-                      <div class="form-group">
-                        <label for="estado">Estado</label>
-                        <select id="estado" name="estado" class="form-control" >
-                            <option value="AC">Acre</option>
-                            <option value="AL">Alagoas</option>
-                            <option value="AP">Amapá</option>
-                            <option value="AM">Amazonas</option>
-                            <option value="BA">Bahia</option>
-                            <option value="CE">Ceará</option>
-                            <option value="DF">Distrito Federal</option>
-                            <option value="ES">Espírito Santo</option>
-                            <option value="GO">Goiás</option>
-                            <option value="MA">Maranhão</option>
-                            <option value="MT">Mato Grosso</option>
-                            <option value="MS">Mato Grosso do Sul</option>
-                            <option value="MG">Minas Gerais</option>
-                            <option value="PA">Pará</option>
-                            <option value="PB">Paraíba</option>
-                            <option value="PR">Paraná</option>
-                            <option value="PE">Pernambuco</option>
-                            <option value="PI">Piauí</option>
-                            <option value="RJ">Rio de Janeiro</option>
-                            <option value="RN">Rio Grande do Norte</option>
-                            <option value="RS">Rio Grande do Sul</option>
-                            <option value="RO">Rondônia</option>
-                            <option value="RR">Roraima</option>
-                            <option value="SC">Santa Catarina</option>
-                            <option value="SP">São Paulo</option>
-                            <option value="SE">Sergipe</option>
-                            <option value="TO">Tocantins</option>
-                            <option value="ET">Estrangeiro</option>
-                        </select>
+                </div>
+                <div class="col-6">
+                    <div class="image" id="qrcode" style="display: none;"></div>
+                    <div class="image" id="placeholder">
+                        <img id="placeholder-img" src="https://qrcode.kaywa.com/web/images/coupon_generator.png" width="400" height="400" />
                     </div>
-                      <div class="form-group">
-                        <label for="valor">Valor</label>
-                        <input type="text" onkeyup="formatarMoeda(this);" class="form-control" id="valor" placeholder="R$ 10.00">
-                      </div>  
-                      <div class="form-group">
-                        <label for="descricao">Descrição</label>
-                        <input type="descricao" class="form-control" id="descricao" placeholder="#Pedido 123">
-                      </div>                    
-                    <button type="button" class="btn btn-primary btn-lg btn-block">Gerar Pix</button>
-                </form>
+                </div>
+                <div class="col-4">
+                    <div class="form">
+                        <form>
+                            <div class="form-group">
+                                <label for="chave_pix">Chave Pix</label>
+                                <input type="chave_pix" class="form-control" id="chave_pix" placeholder="fulano@email.com / 000.000.000-00" />
+                            </div>
+                            <div class="form-group">
+                                <label for="nome">Nome Completo</label>
+                                <input type="nome" class="form-control" id="nome" placeholder="Fulano da Silva Silva" />
+                            </div>
+                            <div class="form-group">
+                                <label for="estado">Estado</label>
+                                <select id="estado" name="estado" class="form-control">
+                                    <option value="AC">Acre</option>
+                                    <option value="AL">Alagoas</option>
+                                    <option value="AP">Amapá</option>
+                                    <option value="AM">Amazonas</option>
+                                    <option value="BA">Bahia</option>
+                                    <option value="CE">Ceará</option>
+                                    <option value="DF">Distrito Federal</option>
+                                    <option value="ES">Espírito Santo</option>
+                                    <option value="GO">Goiás</option>
+                                    <option value="MA">Maranhão</option>
+                                    <option value="MT">Mato Grosso</option>
+                                    <option value="MS">Mato Grosso do Sul</option>
+                                    <option value="MG">Minas Gerais</option>
+                                    <option value="PA">Pará</option>
+                                    <option value="PB">Paraíba</option>
+                                    <option value="PR">Paraná</option>
+                                    <option value="PE">Pernambuco</option>
+                                    <option value="PI">Piauí</option>
+                                    <option value="RJ">Rio de Janeiro</option>
+                                    <option value="RN">Rio Grande do Norte</option>
+                                    <option value="RS">Rio Grande do Sul</option>
+                                    <option value="RO">Rondônia</option>
+                                    <option value="RR">Roraima</option>
+                                    <option value="SC">Santa Catarina</option>
+                                    <option value="SP">São Paulo</option>
+                                    <option value="SE">Sergipe</option>
+                                    <option value="TO">Tocantins</option>
+                                    <option value="ET">Estrangeiro</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="valor">Valor</label>
+                                <input type="text" onkeyup="formatarMoeda(this);" class="form-control" id="valor" placeholder="R$ 10.00" />
+                            </div>
+                            <div class="form-group">
+                                <label for="descricao">Descrição</label>
+                                <input type="descricao" class="form-control" id="descricao" placeholder="#Pedido 123" />
+                            </div>
+                            <button type="button" id="button" onclick="gerarQr()" class="btn btn-primary btn-lg btn-block">
+                                Gerar Pix
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-12" style="padding-top: 7%;">
+                    <div class="title">
+                        <h4>Nunca foi tão fácil fazer um Pix.</h4>
+                        <a href="https://enssure.com.br" target="_blank"><span class="rodape">By Enssure</span></a>
+                    </div>
                 </div>
             </div>
-            <div class="col-12">
-                <div class="title">
-                    <h4>Nunca foi tão fácil fazer um Pix.</h4>
-                    <a href="https://enssure.com.br" target="_blank"><span class="rodape">By Enssure</span></a>
-                </div>
-            </div>
-          </div>
-    </div>    
-    <script src="script.js"></script>
-    <script src="https://raw.githubusercontent.com/sl4ureano/gerar-pix/main/index.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-</body>
+        </div>
+        <script type="text/javascript">
+            function gerarQr() {
+                Mudarestado("qrcode");
+                Mudarestado("placeholder");
+                var pix = geraPix();
+                var qr = new QRious({
+                    size: 400,
+                    value: pix,
+                });
+                document.getElementById("placeholder-img").src = qr.toDataURL();
+            }
+
+            function geraPix() {
+                var chave_pix = document.getElementById("chave_pix").value;
+                var nome = document.getElementById("nome").value;
+                var estado = document.getElementById("estado").value;
+                var valor = document.getElementById("valor").value;
+                var descricao = document.getElementById("descricao").value;
+                return qrCodePix(chave_pix, nome, estado, valor.replace(",", "."), descricao);
+            }
+
+            function Mudarestado(el) {
+                var display = document.getElementById(el).style.display;
+                if (display == "none") document.getElementById(el).style.display = "block";
+                else document.getElementById(el).style.display = "none";
+            }
+
+            function formatarMoeda(i) {
+                var v = i.value.replace(/\D/g, "");
+                v = (v / 100).toFixed(2) + "";
+                v = v.replace(".", ",");
+                v = v.replace(/(\d)(\d{3})(\d{3}),/g, "$1.$2.$3,");
+                v = v.replace(/(\d)(\d{3}),/g, "$1.$2,");
+                i.value = v;
+            }
+        </script>
+        <script>
+            var a2a_config = a2a_config || {};
+            a2a_config.overlays = a2a_config.overlays || [];
+            a2a_config.overlays.push({
+                services: ["copy_link", "print", "email", "facebook", "twitter", "telegram", "whatsapp"],
+                size: "50",
+                style: "horizontal",
+                position: "top center",
+            });
+        </script>
+    </body>
 </html>

@@ -1,0 +1,31 @@
+body {
+    background-color: rgb(37, 37, 37);
+}
+
+.logo{
+  font-family: 'Pacifico', cursive;
+  color: #3ecfb4;
+  font-size: 60px;
+}
+.title {
+    padding-top: 2%;
+    text-align: center;
+    color: white;
+}
+
+
+.form{
+    padding-top: 25%;
+    color: white;
+}
+
+.image{
+  padding-left: 30%;
+  padding-top: 20%;
+}
+
+.rodape {
+  float: right;
+  padding-right: 2%;
+  font-size: 15px;
+}
