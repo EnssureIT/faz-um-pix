@@ -13,15 +13,19 @@ body {
     color: white;
 }
 
-
 .form{
-    padding-top: 25%;
+    padding-top: 30%;
     color: white;
 }
 
 .image{
-  padding-left: 30%;
-  padding-top: 20%;
+  padding-left: 5%;
+  padding-top: 5%;
+}
+
+.social{
+  padding-left: 22%;
+  padding-top: 1%;
 }
 
 .rodape {
@@ -33,4 +37,26 @@ body {
   float: right;
   font-size: 15px;
   filter: invert(100%);
+}
+
+@media print {
+  .hidden-print {
+    display: none !important;
+  }
+}
+
+
+@media (min-width: 600px) {
+  .image{
+    padding-left: 35%;
+    padding-top: 20%;
+  }
+  .social{
+    padding-left: 45%;
+    padding-top: 1%;
+  }
+  .form{
+    padding-top: 25%;
+    color: white;
+  }
 }
