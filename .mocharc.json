@@ -1,0 +1,10 @@
+{
+  "recursive": true,
+  "reporter": "mochawesome",
+  "reporter-option": ["reportDir=reports/tests", "reportFilename=index"],
+  "require": [
+    "ts-node/register",
+    "tsconfig-paths/register",
+    "source-map-support/register"
+  ]
+}
