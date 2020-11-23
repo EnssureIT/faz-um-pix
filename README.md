@@ -7,7 +7,7 @@
    A Forma mais Fácil e Simples de Receber Pagamentos 💵
 </h3>
 
-Biblioteca em Node.js para gerar transações utilizando o sistema PIX do BACEN.
+Biblioteca em JavaScript para gerar transações utilizando o sistema PIX do BACEN.
 
 ## Demonstração
 https://enssureit.github.io/faz-um-pix
