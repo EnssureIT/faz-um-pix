@@ -7,8 +7,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="css/style.css" />
-        <script src="lib/faz-um-pix.js"></script>
-        <script src="js/qrious.min.js"></script>
+        <script src="../lib/browser/faz-um-pix.min.js"></script>
         <title>Faz um Pix</title>
     </head>
     <body>
@@ -105,25 +104,21 @@
             </div>
         </div>
         <script type="text/javascript">
-            function gerarQr() {
+            async function gerarQr() {
                 Mudarestado("qrcode");
                 Mudarestado("placeholder");
                 Mudarestado("social");
-                var pix = geraPix();
-                var qr = new QRious({
-                    size: 350,
-                    value: pix,
-                });
-                document.getElementById("placeholder-img").src = qr.toDataURL();
+                var pix = await geraPix();
+                document.getElementById("placeholder-img").src = pix;
             }
 
-            function geraPix() {
+            async function geraPix() {
                 var chave_pix = document.getElementById("chave_pix").value;
                 var nome = document.getElementById("nome").value;
                 var estado = document.getElementById("estado").value;
                 var valor = document.getElementById("valor").value;
                 var descricao = document.getElementById("descricao").value;
-                return Pix(chave_pix, nome, estado, valor.replace(",", "."), descricao);
+                return await _pix.Pix(chave_pix, nome, estado, valor.replace(",", "."), descricao,true);
             }
 
             function Mudarestado(el) {

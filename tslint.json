@@ -1,0 +1,14 @@
+{
+    "defaultSeverity": "warning",
+    "extends": [
+      "tslint:recommended",
+      "tslint-eslint-rules",
+      "tslint-config-prettier"
+    ],
+    "jsRules": {},
+    "rules": {
+      "interface-name": ["never-prefix"],
+      "variable-name": [true, "allow-leading-underscore", "ban-keywords"]
+    },
+    "rulesDirectory": []
+}
