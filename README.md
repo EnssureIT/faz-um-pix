@@ -10,7 +10,7 @@
 Biblioteca em JavaScript para gerar transações utilizando o sistema PIX do BACEN.
 
 ## Demonstração
-https://enssureit.github.io/faz-um-pix
+https://enssureit.github.io/faz-um-pix/example
 
 ## Instalação
 `npm install faz-um-pix --save`
