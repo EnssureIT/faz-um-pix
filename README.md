@@ -26,7 +26,7 @@ const code = Pix("123456789", "SILVA SILVA", "RIO DE JANEIRO", "0.10", "Pedido #
 // return "00020126490014br.gov.bcb.pix01091234567890214Pedid…1SILVA SILVA6014RIO DE JANEIRO62070503***6304E92D"
 
 
-or if you want it to return a qrcode
+##### Or if you want it to return a qrcode
 const code = Pix("123456789", "SILVA SILVA", "RIO DE JANEIRO", "0.10", "Pedido #123456", true);
 // return "data:image/gif;base64,R0lGODdhkAGQAYAAAAAAAP///ywAAAAAkAGQAQAC/4yPqcvtD6OctNqLs968+w+G4kiW5omm6sq27gvH8kzX9o3n+s4z..."
 ```
@@ -37,7 +37,8 @@ var _pix = require('faz-um-pix');
 var code = _pix.Pix("123456789", "SILVA SILVA", "RIO DE JANEIRO", "0.10", "Pedido #123456");
 // return "00020126490014br.gov.bcb.pix01091234567890214Pedid…1SILVA SILVA6014RIO DE JANEIRO62070503***6304E92D"
 
-or if you want it to return a qrcode
+
+##### Or if you want it to return a qrcode
 const code = _pix.Pix("123456789", "SILVA SILVA", "RIO DE JANEIRO", "0.10", "Pedido #123456", true);
 // return "data:image/gif;base64,R0lGODdhkAGQAYAAAAAAAP///ywAAAAAkAGQAQAC/4yPqcvtD6OctNqLs968+w+G4kiW5omm6sq27gvH8kzX9o3n+s4z..."
 ```
@@ -49,7 +50,7 @@ Html
 var code = _pix.Pix("123456789", "SILVA SILVA", "RIO DE JANEIRO", "0.10", "Pedido #123456");
 // return "00020126490014br.gov.bcb.pix01091234567890214Pedid…1SILVA SILVA6014RIO DE JANEIRO62070503***6304E92D"
 
-or if you want it to return a qrcode
+##### Or if you want it to return a qrcode
 const code = _pix.Pix("123456789", "SILVA SILVA", "RIO DE JANEIRO", "0.10", "Pedido #123456", true);
 // return "data:image/gif;base64,R0lGODdhkAGQAYAAAAAAAP///ywAAAAAkAGQAQAC/4yPqcvtD6OctNqLs968+w+G4kiW5omm6sq27gvH8kzX9o3n+s4z..."
 ```
