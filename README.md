@@ -35,7 +35,7 @@ Html
 ```html
 <script  src="lib/faz-um-pix.js"></script>
 
-var code = Pix("123456789", "SILVA SILVA", "RIO DE JANEIRO", "0.10", "Pedido #123456");
+var code = _pix.Pix("123456789", "SILVA SILVA", "RIO DE JANEIRO", "0.10", "Pedido #123456");
 ```
 
 
