@@ -1,6 +1,7 @@
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import minify from 'rollup-plugin-babel-minify';
+import banner from 'rollup-plugin-banner'
 import pkg from './package.json';
 
 export default [{
@@ -15,5 +16,6 @@ export default [{
     resolve(),
     commonjs(),
     minify({ comments: false }),
+    banner('<%= pkg.name %>\nv<%= pkg.version %>\nby <%= pkg.author %>')
   ],
 }];

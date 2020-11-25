@@ -1,6 +1,6 @@
 {
   "name": "faz-um-pix",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Biblioteca em JavaScript para gerar transações utilizando o sistema PIX do BACEN.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -75,6 +75,7 @@
     "prettier": "^1.19.1",
     "rollup": "^2.33.3",
     "rollup-plugin-babel-minify": "^10.0.0",
+    "rollup-plugin-banner": "^0.2.1",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-multi-input": "^1.1.1",
     "rollup-plugin-node-resolve": "^5.2.0",
@@ -85,9 +86,7 @@
     "tslint-config-prettier": "^1.18.0",
     "tslint-eslint-rules": "^5.4.0",
     "typedoc": "^0.15.2",
-    "typescript": "^3.8.2",
-    "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10"
+    "typescript": "^3.8.2"
   },
   "dependencies": {
     "yaqrcode": "^0.2.1"
