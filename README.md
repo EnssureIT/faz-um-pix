@@ -55,7 +55,8 @@ const code = _pix.Pix("123456789", "SILVA SILVA", "RIO DE JANEIRO", "0.10", "Ped
 // return "data:image/gif;base64,R0lGODdhkAGQAYAAAAAAAP///ywAAAAAkAGQAQAC/4yPqcvtD6OctNqLs968+w+G4kiW5omm6sq27gvH8kzX9o3n+s4z..."
 ```
 
-
+## Screenshot
+![Faz um Pix](./example/print.jpg)
 
 
 ## Como contribuir
