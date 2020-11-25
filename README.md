@@ -23,12 +23,14 @@ Typescript
 import { Pix } from "faz-um-pix"
 
 const code = Pix("123456789", "SILVA SILVA", "RIO DE JANEIRO", "0.10", "Pedido #123456");
+// return "00020126490014br.gov.bcb.pix01091234567890214Pedid…1SILVA SILVA6014RIO DE JANEIRO62070503***6304E92D"
 ```
 Vanilla JS
 ```js
 var _pix = require('faz-um-pix');
 
 var code = _pix.Pix("123456789", "SILVA SILVA", "RIO DE JANEIRO", "0.10", "Pedido #123456");
+// return "00020126490014br.gov.bcb.pix01091234567890214Pedid…1SILVA SILVA6014RIO DE JANEIRO62070503***6304E92D"
 ```
 
 Html
@@ -36,6 +38,7 @@ Html
 <script  src="lib/faz-um-pix.js"></script>
 
 var code = _pix.Pix("123456789", "SILVA SILVA", "RIO DE JANEIRO", "0.10", "Pedido #123456");
+// return "00020126490014br.gov.bcb.pix01091234567890214Pedid…1SILVA SILVA6014RIO DE JANEIRO62070503***6304E92D"
 ```
 
 
