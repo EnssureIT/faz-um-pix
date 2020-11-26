@@ -26,15 +26,15 @@
                     <form class="form">
                         <div class="form-group">
                             <label for="chave_pix">Chave Pix</label>
-                            <input type="chave_pix" class="form-control" id="chave_pix" placeholder="fulano@email.com / 000.000.000-00" />
+                            <input type="chave_pix" class="form-control" id="chave_pix" placeholder="fulano@email.com / 000.000.000-00" required>
                         </div>
                         <div class="form-group">
                             <label for="nome">Nome Completo</label>
-                            <input type="nome" class="form-control" id="nome" placeholder="Fulano da Silva Silva" />
+                            <input type="nome" class="form-control" id="nome" placeholder="Fulano da Silva Silva" required>
                         </div>
                         <div class="form-group">
                             <label for="estado">Estado</label>
-                            <select id="estado" name="estado" class="form-control">
+                            <select id="estado" name="estado" class="form-control" required>
                                 <option value="AC">Acre</option>
                                 <option value="AL">Alagoas</option>
                                 <option value="AP">Amapá</option>
@@ -67,11 +67,11 @@
                         </div>
                         <div class="form-group">
                             <label for="valor">Valor</label>
-                            <input type="text" onkeyup="formatarMoeda(this);" class="form-control" id="valor" placeholder="R$ 10.00" />
+                            <input type="text" onkeyup="formatarMoeda(this);" class="form-control" id="valor" placeholder="R$ 10.00" required>
                         </div>
                         <div class="form-group">
                             <label for="descricao">Descrição</label>
-                            <input type="descricao" class="form-control" id="descricao" placeholder="#Pedido 123" />
+                            <input type="descricao" class="form-control" id="descricao" placeholder="#Pedido 123" required>
                         </div>
                         <button type="button" id="button" onclick="gerarQr()" class="btn btn-primary btn-lg btn-block">
                             Gerar Pix
