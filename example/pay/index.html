@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="../css/style.css" />
+        <script src="../../lib/browser/faz-um-pix.min.js"></script>
+        <title>Faz um Pix</title>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="title">
+                        <a href="https://github.com/EnssureIT/faz-um-pix" target="_blank" class="github"><img title="Faz um Pix" src="../img/github.png" /></a>
+                        <h1 class="logo">Faz um Pix</h1>
+                        <h2>A Forma mais Fácil e Simples de Receber Pagamentos</h2>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="imagepay" id="qrcode" style="display: none;"></div>
+                    <div class="imagepay" id="placeholder">
+                        <img id="placeholder-img" src="https://qrcode.kaywa.com/web/images/coupon_generator.png" width="350" height="350" />
+                    </div>
+                    <div class="detalhes" id="detalhes"></div>
+
+                    <div class="socialpay">
+                        <!-- AddToAny BEGIN -->
+                        <div class="a2a_kit a2a_kit_size_32 a2a_default_style" id="social">
+                            <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+                            <a class="a2a_button_facebook"></a>
+                            <a class="a2a_button_twitter"></a>
+                            <a class="a2a_button_whatsapp"></a>
+                            <a class="a2a_button_email"></a>
+                            <a class="a2a_button_print"></a>
+                        </div>
+                        <script async src="https://static.addtoany.com/menu/page.js"></script>
+                        <!-- AddToAny END -->
+                    </div>
+                </div>
+
+                <div class="col-12" style="padding-top: 7%;">
+                    <div class="title">
+                        <h4>Nunca foi tão fácil fazer um Pix.</h4>
+                        <a href="https://enssure.com.br" target="_blank"><span class="rodapepay">By Enssure</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            (async () => {
+                var res = await getKeyPay();
+                var pix = await _pix.Pix(res.merchant_account, res.merchant_name, res.merchant_city, res.transaction_amount, res.info_adic, true);
+                document.getElementById("placeholder-img").src = pix;
+                document.getElementById("detalhes").innerHTML = `${res.transaction_amount.toLocaleString("pt-br", { style: "currency", currency: "BRL" })}<br>${res.merchant_name}`;
+            })();
+
+            async function getKeyPay() {
+                let keyPay = window.location.search;
+                if (keyPay != "") {
+                    keyPay = keyPay.replace("?", "");
+                    const settings = {
+                        async: true,
+                        crossDomain: true,
+                        url: `http://localhost:8080/api/Pay/${keyPay}`,
+                        method: "GET",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        processData: false,
+                        data: "",
+                    };
+
+                    return new Promise(function (resolve, reject) {
+                        $.ajax(settings).done(function (response) {
+                            resolve(response);
+                        });
+                    });
+                }
+            }
+
+            async function gerarQr() {
+                Mudarestado("qrcode");
+                Mudarestado("placeholder");
+                Mudarestado("social");
+                var pix = await geraPix();
+                document.getElementById("placeholder-img").src = pix;
+            }
+
+            async function geraPix() {
+                var chave_pix = document.getElementById("chave_pix").value;
+                var nome = document.getElementById("nome").value;
+                var estado = document.getElementById("estado").value;
+                var valor = document.getElementById("valor").value;
+                var descricao = document.getElementById("descricao").value;
+                return await _pix.Pix(chave_pix, nome, estado, valor.replace(",", "."), descricao, true);
+            }
+
+            function Mudarestado(el) {
+                var display = document.getElementById(el).style.display;
+                if (display == "none") document.getElementById(el).style.display = "block";
+                else document.getElementById(el).style.display = "none";
+            }
+
+            function formatarMoeda(i) {
+                var v = i.value.replace(/\D/g, "");
+                v = (v / 100).toFixed(2) + "";
+                v = v.replace(".", ",");
+                v = v.replace(/(\d)(\d{3})(\d{3}),/g, "$1.$2.$3,");
+                v = v.replace(/(\d)(\d{3}),/g, "$1.$2,");
+                i.value = v;
+            }
+        </script>
+    </body>
+</html>

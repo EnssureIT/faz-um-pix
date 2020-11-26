@@ -2,6 +2,19 @@ body {
     background-color: rgb(37, 37, 37);
 }
 
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar {
+  width: 0px;  /* Remove scrollbar space */
+  background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #FF0000;
+}
+
 .logo{
   font-family: 'Pacifico', cursive;
   color: #3ecfb4;
@@ -13,8 +26,15 @@ body {
     color: white;
 }
 
+.detalhes {
+  padding-top: 2%;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+}
+
 .form{
-    padding-top: 30%;
+    padding-top: 4%;
     color: white;
 }
 
@@ -23,15 +43,34 @@ body {
   padding-top: 5%;
 }
 
-.social{
+.imagepay{
+  text-align: center;
+  padding-top: 5%;
+}
+
+
+/* .social{
   padding-left: 22%;
   padding-top: 1%;
+} */
+
+.socialpay{
+  display: flex;
+  justify-content: center;
+  padding-top: 3%;
+}
+
+.rodapepay {
+  padding-top: 5%;
+  float: right;
+  font-size: 15px;
 }
 
 .rodape {
   float: right;
   font-size: 15px;
 }
+
 
 .github {
   float: right;
@@ -49,14 +88,22 @@ body {
 @media (min-width: 600px) {
   .image{
     padding-left: 35%;
-    padding-top: 20%;
+    padding-top: 25%;
   }
-  .social{
+  /* .social{
     padding-left: 50%;
+    padding-top: 1%;
+  } */
+  .socialpay{
+    display: flex;
+    justify-content: center;
     padding-top: 1%;
   }
   .form{
-    padding-top: 25%;
+    padding-top: 5%;
     color: white;
+    margin-left: 25%;
+    margin-right:25%;
+    width: 50%;
   }
 }
