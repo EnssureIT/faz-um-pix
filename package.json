@@ -1,6 +1,6 @@
 {
   "name": "faz-um-pix",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Biblioteca em JavaScript para gerar transações utilizando o sistema PIX do BACEN.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
