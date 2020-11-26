@@ -56,7 +56,7 @@ const code = _pix.Pix("123456789", "SILVA SILVA", "RIO DE JANEIRO", "0.10", "Ped
 ```
 
 ## Screenshot
-![Faz um Pix](https://github.com/EnssureIT/faz-um-pix/blob/master/example/print.jpg)
+![Faz um Pix](https://enssureit.github.io/faz-um-pix/example/print.jpg)
 
 
 ## Como contribuir
